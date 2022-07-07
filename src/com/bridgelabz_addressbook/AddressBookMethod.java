@@ -1,8 +1,5 @@
 package com.bridgelabz_addressbook;
 
-
-import com.bridgelabz_addressbook.Contact;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -31,6 +28,7 @@ public class AddressBookMethod {
         Contact contact = new Contact(firstName, lastName, address, city, state, zip);
 
         list.add(contact);
+        System.out.println(list);
     }
 
     public void editContact(){
@@ -81,6 +79,18 @@ public class AddressBookMethod {
             }else{
                 System.out.println(name+" not found in the address-book");
             }
+        }
+    }
+    public void deleteContact(){
+        System.out.println("Enter first name to delete the contact ");
+        String name = sc.nextLine();
+        int index=0;
+        for (Contact con:list) {
+            if(con.getFirstName().equals(name)){
+                list.remove(index);
+                break;
+            }
+            index++;
         }
     }
 }
