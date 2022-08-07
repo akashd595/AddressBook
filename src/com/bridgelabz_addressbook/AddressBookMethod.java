@@ -6,9 +6,26 @@ import java.util.Scanner;
 public class AddressBookMethod {
     Scanner sc = new Scanner(System.in);
     ArrayList<Contact> list = new ArrayList<>();
-    public void newContact(){
+    String name;
+
+    public void duplicateCheck(){
         System.out.println("Enter first name");
-        String firstName = sc.nextLine();
+        name = sc.nextLine();
+        for(Contact cc : list){
+            if(cc.getFirstName().equals(name)){
+                System.out.println("contact already exist ");
+                return;
+            }
+        }
+        newContact();
+    }
+    public void addContacts(){
+        System.out.println("Enter the contact details of person ");
+        duplicateCheck();
+    }
+
+    public void newContact(){
+        String firstName = name;
 
         System.out.println("Enter last name");
         String lastName = sc.nextLine();
