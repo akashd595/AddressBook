@@ -12,7 +12,8 @@ public class AddressBookMain {
         while (true) {
             System.out.println("Enter \n 1. Add  new AddressBook\n 2. Add contact in AddressBook\n "
                     + "3. edit the contact in AddressBook\n 4. delete the contact in AddressBook\n 5. delete the AddressBook\n "
-                    + "6. Print the AddressBook\n 7. Print the contacts in AddressBook\n 0. To exit");
+                    + "6. Print the AddressBook\n 7. Print the contacts in AddressBook\n " +
+                    "8. Search Contact by city\n 9. Search Contact by state\n  0. To exit");
             Scanner scanner = new Scanner(System.in);
             int choice = scanner.nextInt();
             switch (choice) {
@@ -37,12 +38,24 @@ public class AddressBookMain {
                 case 7:
                     obj.printContactsInBook();
                     break;
+                case 8:
+                    System.out.println("Please enter the city ");
+                    Scanner s1 = new Scanner(System.in);
+                    String city = s1.next();
+                    obj.searchCity(city);
+                    break;
+                case 9:
+                    System.out.println("Please enter the state ");
+                    Scanner s2 = new Scanner(System.in);
+                    String state = s2.next();
+                    obj.searchState(state);
+                    break;
                 case 0:
                     System.exit(0);
                     break;
                 default:
-                    System.out.println("Enter the wrong input");
+                    System.out.println("wrong input Please enter again");
             }
         }
     }
-}//end class
+}

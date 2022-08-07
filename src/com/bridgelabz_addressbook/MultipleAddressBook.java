@@ -76,4 +76,12 @@ public class MultipleAddressBook {
         }
         System.out.println(" ");
     }
+    public void searchCity(String city){
+        for (String name : addressBookMap.keySet())
+            addressBookMap.get(name).searchByCity(city);
+    }
+    public void searchState(String state){
+        for (String name : addressBookMap.keySet())
+            addressBookMap.get(name).searchByState(state);
+    }
 }
