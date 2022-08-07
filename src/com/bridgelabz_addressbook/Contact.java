@@ -52,8 +52,8 @@ public class Contact {
     }
     Contact(){}
 
-    public Contact(String firstName, String lastName, String address, String city, String state, String zip) {
-        this.firstName = firstName;
+    public Contact(String firstName1, String lastName, String address, String city, String state, String zip) {
+        this.firstName = firstName1;
         this.lastName = lastName;
         this.address = address;
         this.city = city;
