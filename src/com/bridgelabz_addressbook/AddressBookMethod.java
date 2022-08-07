@@ -1,7 +1,9 @@
 package com.bridgelabz_addressbook;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class AddressBookMethod {
     Scanner sc = new Scanner(System.in);
@@ -98,6 +100,7 @@ public class AddressBookMethod {
             }
         }
     }
+
     public void deleteContact(){
         System.out.println("Enter first name to delete the contact ");
         String name = sc.nextLine();
@@ -108,6 +111,26 @@ public class AddressBookMethod {
                 break;
             }
             index++;
+        }
+    }
+    public void searchByCity(String city){
+
+        List<Contact> cities = list.stream().filter(x -> x.getCity()
+                        .equalsIgnoreCase(city))
+                .collect(Collectors.toList());
+
+        for(Contact cc : cities){
+            System.out.println("Search result"+cc);
+        }
+    }
+    public void searchByState(String state){
+
+        List<Contact> states = list.stream().filter(x -> x.getCity()
+                        .equalsIgnoreCase(state))
+                .collect(Collectors.toList());
+
+        for(Contact cc : states){
+            System.out.println("Search result"+cc);
         }
     }
 }
