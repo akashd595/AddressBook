@@ -23,12 +23,11 @@ public class MultipleAddressBook {
         System.out.println("Enter the name of Address book to add the contact.");
         Scanner scanner = new Scanner(System.in);
         String newContact = scanner.nextLine();
-        AddressBookMethod addressBook = addressBookMap.get(newContact);
-        if (addressBook == null) {
+        if (addressBookMap.get(newContact) == null) {
             System.out.println("No book found");
 
         } else {
-            addressBookMap.get(newContact).newContact();
+            addressBookMap.get(newContact).addContacts();
         }
     }
     public void editContactInBook() {
